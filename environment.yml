@@ -1,0 +1,11 @@
+name: boxplot_env
+channels:
+    - conda-forge
+    - bioconda
+    - defaults
+dependencies:
+    - seaborn=0.11.1
+    - numpy=1.21.0
+    - pandas=1.2.5
+    - matplotlib=3.4.2
+    - networkx=2.5.1

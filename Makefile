@@ -8,7 +8,8 @@ BOXPLOT=protein_domains_vs_string_degree.png
 all : $(BOXPLOT)
 
 $(BOXPLOT) : $(PLOT_SRC) $(PROTEIN_LINKS_TXT) $(PROTEIN_DOMAINS_TXT)
-	$(PLOT_EXE) $^
+	conda env create -f environment.yml
+	conda run -n boxplot_env $(PLOT_EXE) $^
 
 .PHONY : PROTEIN_LINKS_TXT
 $(PROTEIN_LINKS_TXT) :
