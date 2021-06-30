@@ -38,12 +38,12 @@ greater_degree_domains = [ctr_dict[n.split(".")[1]] for n in greater_degree_netw
 lesser_degree_domains = [ctr_dict[n.split(".")[1]] for n in lesser_degree_network.nodes() if n.split(".")[1] in ctr_dict]
 
 df1 = pd.DataFrame()
-df1['domains'] = greater_degree_domains
-df1['degrees'] = 'greater'
+df1['Domains'] = greater_degree_domains
+df1['Degrees'] = 'Greater than 100'
 df2 = pd.DataFrame()
-df2['domains'] = lesser_degree_domains
-df2['degrees'] = 'lesser'
+df2['Domains'] = lesser_degree_domains
+df2['Degrees'] = 'Less than or Equal to 100'
 df = pd.concat([df1, df2]).reset_index(drop = True)
 
-p = sns.catplot(x = 'degrees', y='domains',data =df, kind = 'box')
+p = sns.catplot(x = 'Degrees', y='Domains',data =df, kind = 'box')
 p.savefig(boxplot_file)
